@@ -19,7 +19,37 @@ Projeto da disciplina utilizando **Spring Boot + PostgreSQL** com **Docker Compo
 <img width="930" height="455" alt="image" src="https://github.com/user-attachments/assets/d4547b84-aa07-4ada-93ff-03569670d87f" />
 <img width="1054" height="447" alt="image" src="https://github.com/user-attachments/assets/7810787f-612e-481c-960f-0fa511ee8aa2" />
 
+# Analise da Arquitetura
 
+# Serviços
+
+App (Spring Boot) → API REST (porta 8081).
+
+Database (Postgres 14) → Armazena dados (porta 5432).
+
+Docker para containerização.
+
+(Opcional) PgAdmin → console web de administração.
+
+# Dependências
+
+App depende do Database (via jdbc:postgresql://database:5432/performancekids).
+
+Database depende do Volume pgdata para persistência.
+
+PgAdmin conecta no Database (opcional).
+
+Comunicação feita pela rede interna brinquedos-net.
+
+# Estratégia de containerização
+
+App: build multi-stage (Maven → Temurin JRE 21), roda como usuário não-root, healthcheck no /actuator/health.
+
+Database: imagem oficial postgres:14-alpine, volume pgdata, healthcheck pg_isready.
+
+Volume: Utilizado para não perder os dados ao parar o container
+
+Network: Ambos containers acessam a mesma rede para a comunicação
 
 ---
 
