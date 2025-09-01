@@ -13,6 +13,14 @@ Projeto da disciplina utilizando **Spring Boot + PostgreSQL** com **Docker Compo
 - [Docker Compose](https://docs.docker.com/compose/install/) instalado
 - (Opcional) [DBeaver](https://dbeaver.io/) ou PgAdmin para visualizar o banco
 
+
+## Estrutura atual X estrutura futura
+
+<img width="930" height="455" alt="image" src="https://github.com/user-attachments/assets/d4547b84-aa07-4ada-93ff-03569670d87f" />
+<img width="1054" height="447" alt="image" src="https://github.com/user-attachments/assets/7810787f-612e-481c-960f-0fa511ee8aa2" />
+
+
+
 ---
 
 ## ▶️ Como rodar a aplicação
